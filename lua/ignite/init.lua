@@ -15,11 +15,10 @@ function ignite.load()
   end
 
   vim.g.colors_name = "ignite"
-  vim.opt.background = "dark"
+  vim.o.termguicolors = true
 
   local groups = require("ignite.groups").get()
   for group, opts in pairs(groups) do
-    -- vim.notify("group: " .. group .. ", opts: " .. vim.inspect(opts), vim.log.levels.WARN)
     vim.api.nvim_set_hl(0, group, opts)
   end
 end
