@@ -93,9 +93,9 @@ function group.get()
     StatusLine                  = { bg = pallet.background2 },
     StatusLineNC                = { bg = pallet.background2 },
 
-    TabLine                     = { bg = pallet.background1 },
-    TabLineFill                 = { bg = pallet.background1 },
-    TabLineSel                  = { bg = pallet.background1 },
+    TabLine                     = { bg = pallet.background2 },
+    TabLineFill                 = { bg = pallet.background2 },
+    TabLineSel                  = { bg = pallet.background2 },
 
     Title                       = { fg = pallet.orange, bold = true, italic = true },
     Visual                      = { bg = pallet.background3 },
