@@ -1,5 +1,13 @@
 # Ignite.nvim
 
+<p align="center">
+  <h2 align="center">Ignite.nvim</h2>
+</p>
+
+<p align="center">
+  <img alt="Showcase" src="./showcase.png" width=1000>
+</p>
+
 # Prerequisites
 
 using [Vim Plug](https://github.com/junegunn/vim-plug)
