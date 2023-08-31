@@ -80,8 +80,8 @@ function group.get()
     PmenuSel                    = { link = "CursorLine" },
     PmenuKind                   = { fg = pallet.yellow },
     PmenuKindSel                = { fg = pallet.yellow },
-    PmenuSBar                   = { fg = pallet.background3 },
-    PmenuThumb                  = { fg = pallet.background3 },
+    PmenuSBar                   = { bg = pallet.dark_grey },
+    PmenuThumb                  = { bg = pallet.dark_grey },
 
     Question                    = { fg = pallet.light_green, bold = true },
     QuickFixLine                = { fg = pallet.light_green },
