@@ -1,4 +1,3 @@
 # Ignite.nvim
 
-Refined
 

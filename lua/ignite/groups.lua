@@ -91,7 +91,7 @@ function group.get()
     SpellBad                    = { undercurl = true, sp = pallet.red },
 
     StatusLine                  = { bg = pallet.background2 },
-    StatusLineNC                = { bg = pallet.background2 },
+    StatusLineNC                = { fg = pallet.dark_grey, bg = pallet.background2 },
 
     TabLine                     = { bg = pallet.background2 },
     TabLineFill                 = { bg = pallet.background2 },
