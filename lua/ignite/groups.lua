@@ -268,7 +268,7 @@ function group.get()
     ["@type"]                   = { link = "Type" },
     ["@type.definition"]        = { link = "Typedef" },
     ["@type.builtin"]           = { link = "Type" },
-    ["@type.qualifier"]         = { link = "Type" },
+    ["@type.qualifier"]         = { fg = pallet.pink },
     ["@include"]                = { link = "Include" },
     ["@preproc"]                = { link = "PreProc" },
     ["@debug"]                  = { link = "Debug" },
