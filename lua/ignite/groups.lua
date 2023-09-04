@@ -249,8 +249,8 @@ function group.get()
     ["@parameter"]              = { fg = pallet.brown },
     ["@method"]                 = { link = "Function" },
     ["@method.call"]            = { link = "Function" },
-    ["@field"]                  = { fg = pallet.very_light_green },
-    ["@property"]               = { fg = pallet.very_light_green },
+    ["@field"]                  = { fg = pallet.grey },
+    ["@property"]               = { fg = pallet.grey },
     ["@constructor"]            = { link = "Class" },
     ["@conditional"]            = { link = "Conditional" },
     ["@repeat"]                 = { link = "Repeat" },
@@ -260,7 +260,7 @@ function group.get()
     ["@keyword.operator"]       = { link = "Operator" },
     ["@keyword.return"]         = { link = "Keyword" },
     ["@exception"]              = { link = "Exception" },
-    ["@variable"]               = { fg = pallet.grey },
+    ["@variable"]               = { fg = pallet.very_light_grey },
     ["@variable.builtin"]       = { link = "Special" },
     ["@storageclass"]           = { link = "StorageClass" },
     ["@structure"]              = { link = "Structure" },
@@ -275,7 +275,7 @@ function group.get()
 
     NvimTreeNormal              = { bg = pallet.background2 },
 
-    -- coc.nvim
+    -- coc
     CocErrorSign                = { link = "DiagnosticError" },
     CocWarningSign              = { link = "DiagnosticWarn" },
     CocInfoSign                 = { link = "DiagnosticSignInfo" },
@@ -309,6 +309,7 @@ function group.get()
     TelescopeSelectionCaret     = { fg = pallet.orange, bg = pallet.background3 },
     TelescopeSelection          = { fg = pallet.orange, bg = pallet.background3 },
 
+    -- cmp
     CmpItemAbbrMatch            = { fg = pallet.yellow },
     CmpItemAbbrMatchFuzzy       = { fg = pallet.orange },
     CmpItemKindArray            = { fg = pallet.grey },
@@ -321,7 +322,7 @@ function group.get()
     CmpItemKindEnum             = { link = "Structure" },
     CmpItemKindEnumMember       = { link = "Constant" },
     CmpItemKindEvent            = { link = "Normal" },
-    CmpItemKindField            = { link = "Normal" },
+    CmpItemKindField            = { fg = pallet.very_light_green },
     CmpItemKindFile             = { link = "Normal" },
     CmpItemKindFolder           = { link = "Directory" },
     CmpItemKindPackage          = { link = "Directory" },
@@ -344,7 +345,7 @@ function group.get()
     CmpItemKindString           = { link = "String" },
     CmpItemKindUnit             = { link = "String" },
     CmpItemKindValue            = { link = "Constant" },
-    CmpItemKindVariable         = { fg = pallet.grey },
+    CmpItemKindVariable         = { fg = pallet.very_light_green },
   }
 
   return groups
