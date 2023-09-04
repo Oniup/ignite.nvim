@@ -249,8 +249,8 @@ function group.get()
     ["@parameter"]              = { fg = pallet.brown },
     ["@method"]                 = { link = "Function" },
     ["@method.call"]            = { link = "Function" },
-    ["@field"]                  = { fg = pallet.grey },
-    ["@property"]               = { fg = pallet.grey },
+    ["@field"]                  = { fg = pallet.very_light_green },
+    ["@property"]               = { fg = pallet.very_light_green },
     ["@constructor"]            = { link = "Class" },
     ["@conditional"]            = { link = "Conditional" },
     ["@repeat"]                 = { link = "Repeat" },
@@ -260,7 +260,7 @@ function group.get()
     ["@keyword.operator"]       = { link = "Operator" },
     ["@keyword.return"]         = { link = "Keyword" },
     ["@exception"]              = { link = "Exception" },
-    ["@variable"]               = { fg = pallet.very_light_grey },
+    ["@variable"]               = { fg = pallet.grey },
     ["@variable.builtin"]       = { link = "Special" },
     ["@storageclass"]           = { link = "StorageClass" },
     ["@structure"]              = { link = "Structure" },
@@ -326,7 +326,7 @@ function group.get()
     CmpItemKindFile             = { link = "Normal" },
     CmpItemKindFolder           = { link = "Directory" },
     CmpItemKindPackage          = { link = "Directory" },
-    CmpItemKindProperty         = { fg = pallet.grey },
+    CmpItemKindProperty         = { fg = pallet.very_light_green },
     CmpItemKindText             = { link = "Normal" },
     CmpItemKindFunction         = { link = "Function", italic = false },
     CmpItemKindInterface        = { link = "Class" },
@@ -345,7 +345,7 @@ function group.get()
     CmpItemKindString           = { link = "String" },
     CmpItemKindUnit             = { link = "String" },
     CmpItemKindValue            = { link = "Constant" },
-    CmpItemKindVariable         = { fg = pallet.very_light_green },
+    CmpItemKindVariable         = { fg = pallet.grey },
   }
 
   return groups
