@@ -74,7 +74,7 @@ function group.get()
     Normal                      = { fg = pallet.light_grey, bg = pallet.background1 },
     NormalFloat                 = { fg = pallet.light_grey, bg = pallet.background1 },
     FloatBorder                 = { fg = pallet.dark_grey },
-    FloatTitle                  = { fg = pallet.orange, bold = true, italic = true },
+    FloatTitle                  = { fg = pallet.orange, bold = true },
 
     Pmenu                       = { link = "Normal" },
     PmenuSel                    = { link = "CursorLine" },
@@ -97,7 +97,7 @@ function group.get()
     TabLineFill                 = { bg = pallet.background2 },
     TabLineSel                  = { bg = pallet.background2 },
 
-    Title                       = { fg = pallet.orange, bold = true, italic = true },
+    Title                       = { fg = pallet.orange, bold = true },
     Visual                      = { bg = pallet.background3 },
     VisualNOS                   = { bg = pallet.background3 },
     WarningMsg                  = { fg = pallet.yellow },
@@ -109,7 +109,7 @@ function group.get()
     WinBarNC                    = { fg = pallet.background3, bg = pallet.background3 },
 
     -- Common
-    Comment                     = { fg = pallet.dark_grey },
+    Comment                     = { fg = pallet.dark_grey, italic = true },
 
     Constant                    = { fg = pallet.pink },
     String                      = { fg = pallet.dark_green },
@@ -264,7 +264,7 @@ function group.get()
     ["@variable.builtin"]       = { link = "Special" },
     ["@storageclass"]           = { link = "StorageClass" },
     ["@structure"]              = { link = "Structure" },
-    ["@namespace"]              = { fg = pallet.light_green, italic = true },
+    ["@namespace"]              = { fg = pallet.light_green },
     ["@type"]                   = { link = "Type" },
     ["@type.definition"]        = { link = "Typedef" },
     ["@type.builtin"]           = { link = "Type" },
@@ -327,12 +327,12 @@ function group.get()
     CmpItemKindPackage          = { link = "Directory" },
     CmpItemKindProperty         = { fg = pallet.grey },
     CmpItemKindText             = { link = "Normal" },
-    CmpItemKindFunction         = { link = "Function" },
+    CmpItemKindFunction         = { link = "Function", italic = false },
     CmpItemKindInterface        = { link = "Class" },
     CmpItemKindKeyword          = { link = "Keyword" },
     CmpItemKindReference        = { fg = pallet.light_blue },
     CmpItemKindTypeParameter    = { link = "Type" },
-    CmpItemKindMethod           = { link = "Function" },
+    CmpItemKindMethod           = { link = "Function", italic = false },
     CmpItemKindModule           = { fg = pallet.light_green },
     CmpItemKindNamespace        = { fg = pallet.light_green },
     CmpItemKindNull             = { link = "Constant" },
