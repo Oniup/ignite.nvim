@@ -211,7 +211,7 @@ function group.get()
     ["@punctuation.special"]    = { link = "Special" },
 
     ["@lsp.type.class"]         = { link = "@storageclass" },
-    ["@lsp.type.comment"]       = { link = "@type" },
+    ["@lsp.type.comment"]       = { link = "@comment" },
     ["@lsp.type.decorator"]     = { link = "@macro" },
     ["@lsp.type.enum"]          = { link = "@enum" },
     ["@lsp.type.enumMember"]    = { link = "@constant" },
