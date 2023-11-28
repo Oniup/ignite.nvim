@@ -76,7 +76,7 @@ function group.get()
     FloatBorder                 = { fg = pallet.dark_grey },
     FloatTitle                  = { fg = pallet.orange, bold = true },
 
-    Pmenu                       = { link = "Normal" },
+    Pmenu                       = { bg = pallet.background2 },
     PmenuSel                    = { link = "CursorLine" },
     PmenuKind                   = { fg = pallet.yellow },
     PmenuKindSel                = { fg = pallet.yellow },
