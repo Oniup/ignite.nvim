@@ -5,6 +5,7 @@ return {
 
   very_light_green = "#a6a499",
   very_light_grey  = "#bfb2a4",
+  dull_blue        = "#879291",
   light_grey       = "#a69a8d",
   light_green      = "#b1ca78",
   light_blue       = "#82979C",

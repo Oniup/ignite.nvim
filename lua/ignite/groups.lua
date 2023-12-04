@@ -5,7 +5,7 @@ local function set_terminal_colors(pallet)
   vim.g.terminal_color_8  = pallet.grey
   vim.g.terminal_color_1  = pallet.red
   vim.g.terminal_color_9  = pallet.red
-  vim.g.terminal_color_2  = pallet.light_blue
+  vim.g.terminal_color_2  = pallet.dark_green
   vim.g.terminal_color_10 = pallet.orange
   vim.g.terminal_color_3  = pallet.yellow
   vim.g.terminal_color_11 = pallet.yellow
@@ -13,8 +13,8 @@ local function set_terminal_colors(pallet)
   vim.g.terminal_color_12 = pallet.blue
   vim.g.terminal_color_5  = pallet.pink
   vim.g.terminal_color_13 = pallet.pink
-  vim.g.terminal_color_6  = pallet.dark_green
-  vim.g.terminal_color_14 = pallet.dark_green
+  vim.g.terminal_color_6  = pallet.light_blue
+  vim.g.terminal_color_14 = pallet.light_blue
   vim.g.terminal_color_7  = pallet.light_grey
   vim.g.terminal_color_15 = pallet.very_light_grey
 end
@@ -260,7 +260,7 @@ function group.get()
     ["@keyword.operator"]       = { link = "Operator" },
     ["@keyword.return"]         = { link = "Keyword" },
     ["@exception"]              = { link = "Exception" },
-    ["@variable"]               = { link = "Normal" },
+    ["@variable"]               = { fg = pallet.dull_blue },
     ["@variable.builtin"]       = { link = "Special" },
     ["@storageclass"]           = { link = "StorageClass" },
     ["@structure"]              = { link = "Structure" },
@@ -345,7 +345,7 @@ function group.get()
     CmpItemKindString           = { link = "String" },
     CmpItemKindUnit             = { link = "String" },
     CmpItemKindValue            = { link = "Constant" },
-    CmpItemKindVariable         = { link = "Normal" },
+    CmpItemKindVariable         = { fg = pallet.dull_blue },
   }
 
   return groups
