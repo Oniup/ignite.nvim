@@ -5,7 +5,7 @@ local function set_terminal_colors(pallet)
   vim.g.terminal_color_8  = pallet.grey
   vim.g.terminal_color_1  = pallet.red
   vim.g.terminal_color_9  = pallet.red
-  vim.g.terminal_color_2  = pallet.dark_green
+  vim.g.terminal_color_2  = pallet.light_blue
   vim.g.terminal_color_10 = pallet.orange
   vim.g.terminal_color_3  = pallet.yellow
   vim.g.terminal_color_11 = pallet.yellow
@@ -13,8 +13,8 @@ local function set_terminal_colors(pallet)
   vim.g.terminal_color_12 = pallet.blue
   vim.g.terminal_color_5  = pallet.pink
   vim.g.terminal_color_13 = pallet.pink
-  vim.g.terminal_color_6  = pallet.light_blue
-  vim.g.terminal_color_14 = pallet.light_blue
+  vim.g.terminal_color_6  = pallet.dark_green
+  vim.g.terminal_color_14 = pallet.dark_green
   vim.g.terminal_color_7  = pallet.light_grey
   vim.g.terminal_color_15 = pallet.very_light_grey
 end
@@ -223,13 +223,13 @@ function group.get()
     ["@lsp.type.parameter"]     = { link = "@parameter" },
     ["@lsp.type.property"]      = { link = "@property" },
     ["@lsp.type.struct"]        = { link = "@structure" },
-    ["@lsp.type.type"]          = { link = "@type" },
+    ["@lsp.type.type"]          = { link = "@type.definition" },
     ["@lsp.type.TypeParameter"] = { link = "@type.definition" },
     ["@lsp.type.variable"]      = { link = "@variable" },
 
     ["@comment"]                = { link = "Comment" },
     ["@constant"]               = { link = "Constant" },
-    ["@constant.builtin"]       = { link = "Function" },
+    ["@constant.builtin"]       = { link = "Constant" },
     ["@constant.macro"]         = { link = "Define" },
     ["@define"]                 = { link = "Define" },
     ["@macro"]                  = { link = "Macro" },
@@ -260,7 +260,7 @@ function group.get()
     ["@keyword.operator"]       = { link = "Operator" },
     ["@keyword.return"]         = { link = "Keyword" },
     ["@exception"]              = { link = "Exception" },
-    ["@variable"]               = { fg = pallet.grey },
+    ["@variable"]               = { link = "Normal" },
     ["@variable.builtin"]       = { link = "Special" },
     ["@storageclass"]           = { link = "StorageClass" },
     ["@structure"]              = { link = "Structure" },
@@ -345,7 +345,7 @@ function group.get()
     CmpItemKindString           = { link = "String" },
     CmpItemKindUnit             = { link = "String" },
     CmpItemKindValue            = { link = "Constant" },
-    CmpItemKindVariable         = { fg = pallet.grey },
+    CmpItemKindVariable         = { link = "Normal" },
   }
 
   return groups
