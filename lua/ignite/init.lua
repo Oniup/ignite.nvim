@@ -1,56 +1,50 @@
 local M = {}
 
-function M.setup(setup)
-  M.__overrides = setup.overrides or nil
-end
-
-function M.get_tbl(tbl, name)
-  if M.__overrides and M.__overrides[name] then
-    tbl = vim.tbl_deep_extend("force", tbl, M.__overrides[name])
+function M.setup(opts)
+  if opts then
+    require("ignite.config").override_defaults(opts)
   end
-  return tbl
 end
 
-function M.set_terminal_colors(pallet)
-  vim.g.terminal_color_0  = pallet.background1
-  vim.g.terminal_color_8  = pallet.grey
-  vim.g.terminal_color_1  = pallet.red
-  vim.g.terminal_color_9  = pallet.red
-  vim.g.terminal_color_2  = pallet.dark_green
-  vim.g.terminal_color_10 = pallet.orange
-  vim.g.terminal_color_3  = pallet.yellow
-  vim.g.terminal_color_11 = pallet.yellow
-  vim.g.terminal_color_4  = pallet.blue
-  vim.g.terminal_color_12 = pallet.blue
-  vim.g.terminal_color_5  = pallet.pink
-  vim.g.terminal_color_13 = pallet.pink
-  vim.g.terminal_color_6  = pallet.light_blue
-  vim.g.terminal_color_14 = pallet.light_blue
-  vim.g.terminal_color_7  = pallet.light_grey
-  vim.g.terminal_color_15 = pallet.very_light_grey
+function M.final_colors()
+  local color_groups = require("ignite.colors")
+  local tbl = vim.deepcopy(require("ignite.config").config)
+
+  tbl.colors.pallet = vim.tbl_deep_extend(
+    "force", color_groups.default_pallet, tbl.colors.pallet
+  )
+  tbl.colors.terminal = vim.tbl_deep_extend(
+    "force", color_groups.get_terminal(tbl.colors.pallet), tbl.colors.terminal
+  )
+  tbl.colors.groups = vim.tbl_deep_extend(
+    "force", color_groups.get_groups(tbl.colors.pallet, tbl.style), tbl.colors.groups
+  )
+  return tbl
 end
 
 function M.load()
   if vim.version().minor < 8 then
-    vim.notify_once("ignite.nvim: requires neovim version 0.8 or higher", vim.log.levels.ERROR)
+    vim.notify_once(
+      "ignite.nvim: requires neovim version 0.8 or higher", vim.log.levels.ERROR
+    )
     return
   end
 
-  if vim.g.colors_name then
-    vim.cmd.hi("clear")
+  local colors = M.final_colors()
+  for i, v in ipairs(colors.colors.terminal) do
+    vim.g["terminal_color_" .. i - 1] = v
   end
 
   vim.g.colors_name = "ignite"
   vim.o.termguicolors = true
 
-  local pallet = M.get_tbl(require("ignite.pallet"), "pallet")
-  local groups = M.get_tbl(require("ignite.groups").get(pallet), "groups")
-
-  for group, opts in pairs(groups) do
-    vim.api.nvim_set_hl(0, group, opts)
+  if vim.g.colors_name then
+    vim.cmd.hi("clear")
   end
 
-  M.set_terminal_colors(pallet)
+  for group, opts in pairs(colors.colors.groups) do
+    vim.api.nvim_set_hl(0, group, opts)
+  end
 end
 
 return M
