@@ -5,7 +5,7 @@ M.config = {
     pallet = {},
     groups = {},
     terminal = {},
-    lualine = {}
+    lualine = {},
   },
   style = {
     underline = true,

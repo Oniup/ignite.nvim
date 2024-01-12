@@ -1,6 +1,7 @@
 local M = {}
 
 M.default_pallet = {
+  background0      = "#0d0e0e",
   background1      = "#131515",
   background2      = "#181b1a",
   background3      = "#222625",
@@ -46,6 +47,7 @@ end
 
 function M.get_groups(pallet, style)
   return {
+    Background0                  = { bg = pallet.background0 },
     Background1                  = { bg = pallet.background1 },
     Background2                  = { bg = pallet.background2 },
     Background3                  = { bg = pallet.background3 },
@@ -76,7 +78,6 @@ function M.get_groups(pallet, style)
     TermCursorNC                 = { link = "Comment" },
 
     ErrorMsg                     = { fg = pallet.keyword },
-    WinSeparator                 = { fg = pallet.background3 },
 
     Folded                       = { fg = pallet.comment },
     FoldColumn                   = { fg = pallet.background3 },
@@ -93,7 +94,7 @@ function M.get_groups(pallet, style)
     MsgSeparator                 = { fg = pallet.background3 },
     MoreMsg                      = { fg = pallet.string, bg = pallet.background2 },
 
-    VertSplit                    = { fg = pallet.text, bg = pallet.background1, },
+    VertSplit                    = { fg = pallet.text, bg = pallet.background3, bold = style.bold },
 
     Substitute                   = { fg = pallet.cursor_under_txt, bg = pallet.type },
     CursorLineNr                 = { fg = pallet.text2 },
@@ -130,7 +131,7 @@ function M.get_groups(pallet, style)
     WarningMsg                   = { fg = pallet.type },
 
     Whitespace                   = { fg = pallet.comment },
-    Winseparator                 = { fg = pallet.background3 },
+    Winseparator                 = { fg = pallet.background1 },
     WildMenu                     = { fg = pallet.cursor_under_txt, bg = pallet.type },
     WinBar                       = { fg = pallet.background3, bg = pallet.background3 },
     WinBarNC                     = { fg = pallet.background3, bg = pallet.background3 },
@@ -354,7 +355,7 @@ function M.get_groups(pallet, style)
     xmlEntity                    = { link = "Keyword" },
     xmlEntityPunct               = { link = "Keyword" },
 
-    NvimTreeNormal               = { bg = pallet.background2 },
+    NvimTreeNormal               = { bg = pallet.background0 },
     NvimTreeSymlink              = { fg = pallet.variable },
     NvimTreeRootFolder           = { fg = pallet.functions, bold = style.bold },
     NvimTreeFolderIcon           = { fg = pallet.operator, bold = style.bold },
@@ -362,9 +363,9 @@ function M.get_groups(pallet, style)
     NvimTreeExecFile             = { fg = pallet.namespace, bold = style.bold },
     NvimTreeOpenedFile           = { fg = pallet.keyword, bold = style.bold },
     NvimTreeSpecialFile          = {
-      fg = pallet.type,
+      fg = pallet.keyword,
       bold = style.bold,
-      underline = style.underline
+      italic = style.italic,
     },
     NvimTreeImageFile            = { fg = pallet.constant },
     NvimTreeIndentMarker         = { fg = pallet.background3 },
@@ -374,7 +375,7 @@ function M.get_groups(pallet, style)
     NvimTreeGitRenamed           = { fg = pallet.functions },
     NvimTreeGitNew               = { fg = pallet.namespace },
     NvimTreeGitDeleted           = { fg = pallet.keyword },
-    NvimTreeWindowPicker         = { fg = pallet.cursor_under_txt, bg = pallet.operator },
+    NvimTreeWindowPicker         = { fg = pallet.cursor_under_txt, bg = pallet.pacllet },
 
     TelescopeNormal              = { link = "Normal" },
     TelescopePromptNormal        = { link = "Normal" },
@@ -391,7 +392,7 @@ function M.get_groups(pallet, style)
     CmpItemAbbrMatch             = { fg = pallet.type },
     CmpItemMenu                  = { link = "Comment" },
     CmpItemAbbrMatchFuzzy        = { fg = pallet.functions },
-    CmpItemAbbrDeprecated        = { fg = pallet.comment, italics = style.italics, strikethrough = style.strikethrough },
+    CmpItemAbbrDeprecated        = { fg = pallet.comment, italic = style.italic, strikethrough = style.strikethrough },
     CmpItemKindArray             = { fg = pallet.text2 },
     CmpItemKindBoolean           = { link = "Keyword" },
     CmpItemKindClass             = { link = "Structure" },
@@ -508,6 +509,31 @@ function M.get_groups(pallet, style)
     NotifyWARNBorder             = { link = "DiagnosticWarn" },
     NotifyWARNIcon               = { link = "DiagnosticWarn" },
     NotifyWARNTitle              = { link = "DiagnosticWarn" },
+
+    BufferCurrent                = { fg = pallet.operator,      bg = pallet.background1, italic = style.italic, bold = style.bold },
+    BufferCurrentIndex           = { fg = pallet.operator,      bg = pallet.background1, italic = style.italic, bold = style.bold },
+    BufferCurrentMod             = { fg = pallet.operator,      bg = pallet.background1, italic = style.italic, bold = style.bold },
+    BufferCurrentSign            = { fg = pallet.background3,   bg = pallet.background1, italic = style.italic, bold = style.bold },
+    BufferCurrentTarget          = { fg = pallet.operator,      bg = pallet.background1, italic = style.italic, bold = style.bold },
+
+    BufferVisible                = { fg = pallet.comment,       bg = pallet.background1, italic = style.italic },
+    BufferVisibleIndex           = { fg = pallet.comment,       bg = pallet.background1, italic = style.italic },
+    BufferVisibleMod             = { fg = pallet.comment,       bg = pallet.background1, italic = style.italic },
+    BufferVisibleSign            = { fg = pallet.background3,   bg = pallet.background1, italic = style.italic },
+    BufferVisibleTarget          = { fg = pallet.comment,       bg = pallet.background1, italic = style.italic },
+
+    BufferInactive               = { fg = pallet.background3,   bg = pallet.background0 },
+    BufferInactiveIndex          = { fg = pallet.background3,   bg = pallet.background0 },
+    BufferInactiveMod            = { fg = pallet.background3,   bg = pallet.background0 },
+    BufferInactiveSign           = { fg = pallet.background3,   bg = pallet.background0 },
+    BufferInactiveTarget         = { fg = pallet.background3,   bg = pallet.background0 },
+
+    BufferTabpages               = { bg = pallet.background0 },
+    BufferTabpageFill            = { bg = pallet.background0 },
+    BufferOffset                 = { bg = pallet.background0 },
+    BufferScrollArrow            = { bg = pallet.background0 },
+
+    BufferPart                   = {},
   }
 end
 

@@ -1,7 +1,9 @@
 local config = require("ignite.config").config
 
 local pallet = vim.tbl_deep_extend(
-  "force", require("ignite.colors").default_pallet, config.colors.pallet
+  "force",
+  require("ignite.colors").default_pallet,
+  config.colors.pallet
 )
 
 local default_theme = {
