@@ -375,7 +375,7 @@ function M.get_groups(pallet, style)
     NvimTreeGitRenamed           = { fg = pallet.functions },
     NvimTreeGitNew               = { fg = pallet.namespace },
     NvimTreeGitDeleted           = { fg = pallet.keyword },
-    NvimTreeWindowPicker         = { fg = pallet.cursor_under_txt, bg = pallet.pacllet },
+    NvimTreeWindowPicker         = { fg = pallet.cursor_under_txt, bg = pallet.operator },
 
     TelescopeNormal              = { link = "Normal" },
     TelescopePromptNormal        = { link = "Normal" },
