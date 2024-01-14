@@ -1,12 +1,7 @@
-local config = require("ignite.config").config
+local config = require("ignite").config
+local pallet = config.pallet
 
-local pallet = vim.tbl_deep_extend(
-  "force",
-  require("ignite.colors").default_pallet,
-  config.colors.pallet
-)
-
-local default_theme = {
+local theme = {
   normal = {
     a = { bg = pallet.operator, fg = pallet.cursor_under_txt, gui = "bold" },
     b = { bg = pallet.background3 },
@@ -39,4 +34,4 @@ local default_theme = {
   },
 }
 
-return vim.tbl_deep_extend("force", default_theme, config.colors.lualine)
+return vim.tbl_deep_extend("force", theme, config.lualine_theme)

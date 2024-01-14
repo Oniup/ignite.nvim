@@ -1,31 +1,9 @@
 local M = {}
 
-M.default_pallet = {
-  background0      = "#0d0e0e",
-  background1      = "#131515",
-  background2      = "#181b1a",
-  background3      = "#222625",
-
-  cursor           = "#bfb2a4",
-  cursor_under_txt = "#000000",
-  text             = "#a69a8d",
-  text2            = "#9a8d8d",
-
-  variable         = "#879291",
-  property         = "#a6a499",
-  comment          = "#59544d",
-  operator         = "#82979C",
-  namespace        = "#b1ca78",
-  constant         = "#ee617b",
-  keyword          = "#e74e3d",
-  type             = "#f6ba41",
-  functions        = "#fe7442",
-  string           = "#9aad6c",
-  parameter        = "#c19c6c",
-}
-
-function M.get_terminal(pallet)
-  return {
+function M.get_terminal()
+  local config = require("ignite").config
+  local pallet = config.pallet
+  local terminal_col = {
     pallet.background1,
     pallet.red,
     pallet.dark_green,
@@ -43,10 +21,14 @@ function M.get_terminal(pallet)
     pallet.light_blue,
     pallet.very_light_grey,
   }
+  return vim.list_extend(terminal_col, config.terminal)
 end
 
-function M.get_groups(pallet, style)
-  return {
+function M.get_groups()
+  local config = require("ignite").config
+  local pallet = config.pallet
+  local style = config.style
+  local groups = {
     Background0                  = { bg = pallet.background0 },
     Background1                  = { bg = pallet.background1 },
     Background2                  = { bg = pallet.background2 },
@@ -63,8 +45,8 @@ function M.get_groups(pallet, style)
     vCursor                      = { link = "Cursor" },
     lCursor                      = { link = "Cursor" },
     CursorIM                     = { link = "Cursor" },
-    CursorColumn                 = { link = "Background3Color" },
-    CursorLine                   = { link = "Background3Color" },
+    CursorColumn                 = { bg = pallet.background2 },
+    CursorLine                   = { bg = pallet.background2 },
 
     Directory                    = { fg = pallet.operator },
     DiffAdd                      = { fg = pallet.namespace },
@@ -93,8 +75,6 @@ function M.get_groups(pallet, style)
     MsgArea                      = { bg = pallet.background2 },
     MsgSeparator                 = { fg = pallet.background3 },
     MoreMsg                      = { fg = pallet.string, bg = pallet.background2 },
-
-    VertSplit                    = { fg = pallet.text, bg = pallet.background3, bold = style.bold },
 
     Substitute                   = { fg = pallet.cursor_under_txt, bg = pallet.type },
     CursorLineNr                 = { fg = pallet.text2 },
@@ -131,10 +111,10 @@ function M.get_groups(pallet, style)
     WarningMsg                   = { fg = pallet.type },
 
     Whitespace                   = { fg = pallet.comment },
-    Winseparator                 = { fg = pallet.background1 },
+    WinSeparator                 = { fg = pallet.background3 },
     WildMenu                     = { fg = pallet.cursor_under_txt, bg = pallet.type },
-    WinBar                       = { fg = pallet.background3, bg = pallet.background3 },
-    WinBarNC                     = { fg = pallet.background3, bg = pallet.background3 },
+    WinBar                       = { bg = pallet.background3 },
+    WinBarNC                     = { bg = pallet.background3 },
 
     -- Common
     Comment                      = { fg = pallet.comment, italic = style.italic },
@@ -448,14 +428,11 @@ function M.get_groups(pallet, style)
     CocInfoHighlight             = { undercurl = style.undercurl, sp = pallet.string },
     CocHintHighlight             = { undercurl = style.undercurl, sp = pallet.operator },
 
-    debugPC                      = { bg = pallet.background3 },
-    debugBreakpoint              = { fg = pallet.keyword },
-
     DapBreakpointSymbol          = { fg = pallet.keyword },
     DapStoppedSymbol             = { fg = pallet.namespace },
     DapUIBreakpointsCurrentLine  = { link = "Structure" },
     DapUIBreakpointsDisabledLine = { link = "Comment" },
-    DapUIBreakpointsInfo         = { link = "Normal" },
+    DapUIBreakpointsInfo         = { fg = pallet.operator },
     DapUIBreakpointsLine         = { fg = pallet.constant },
     DapUIBreakpointsPath         = { fg = pallet.operator, bold = style.bold },
     DapUICurrentFrameName        = { link = "Identifier" },
@@ -473,13 +450,13 @@ function M.get_groups(pallet, style)
     DapUIWatchesError            = { link = "DiagnosticError" },
     DapUIWatchesValue            = { link = "Constant" },
     DapUIWinSelect               = { link = "Type" },
-    DapUIPlayPause               = { fg = pallet.namespace, bg = pallet.background3 },
-    DapUIRestart                 = { fg = pallet.namespace, bg = pallet.background3 },
-    DapUIStepBack                = { fg = pallet.operator, bg = pallet.background3 },
-    DapUIStepInto                = { fg = pallet.operator, bg = pallet.background3 },
-    DapUIStepOut                 = { fg = pallet.operator, bg = pallet.background3 },
-    DapUIStepOver                = { fg = pallet.operator, bg = pallet.background3 },
-    DapUIStop                    = { fg = pallet.keyword, bg = pallet.background3 },
+    DapUIPlayPause               = { fg = pallet.namespace },
+    DapUIRestart                 = { fg = pallet.namespace },
+    DapUIStepBack                = { fg = pallet.operator },
+    DapUIStepInto                = { fg = pallet.operator },
+    DapUIStepOut                 = { fg = pallet.operator },
+    DapUIStepOver                = { fg = pallet.operator },
+    DapUIStop                    = { fg = pallet.keyword },
 
     TSRainbowRed                 = { fg = pallet.keyword },
     TSRainbowOrange              = { fg = pallet.functions },
@@ -535,6 +512,10 @@ function M.get_groups(pallet, style)
 
     BufferPart                   = {},
   }
+  if config.groups then
+    groups = vim.tbl_deep_extend("force", groups, config.groups)
+  end
+  return groups
 end
 
 return M
