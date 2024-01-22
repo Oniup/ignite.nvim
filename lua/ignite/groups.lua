@@ -1,43 +1,64 @@
 local M = {}
 
+---@return table<number, string>
 function M.get_terminal()
     local config = require("ignite").config
     local pallet = config.pallet
-    local terminal_col = {
-        pallet.background0,
-        pallet.keyword,
-        pallet.method,
-        pallet.type,
-        pallet.background3,
-        pallet.constant,
-        pallet.string,
-        pallet.text,
-        pallet.comment,
-        pallet.keyword,
-        pallet.string,
-        pallet.type,
-        pallet.operator,
-        pallet.constant,
-        pallet.method,
-        pallet.comment,
-    }
-    return vim.list_extend(terminal_col, config.terminal)
+    local terminal_col = vim.tbl_deep_extend("force", {
+        -- normal
+        [1] = pallet.background0,
+        [2] = pallet.keyword,
+        [3] = pallet.method,
+        [4] = pallet.type,
+        [5] = pallet.background3,
+        [6] = pallet.constant,
+        [7] = pallet.string,
+        [8] = pallet.comment,
+
+        -- bright
+        [9] = pallet.variable,
+        [10] = pallet.keyword,
+        [11] = pallet.method,
+        [12] = pallet.type,
+        [13] = pallet.background3,
+        [14] = pallet.constant,
+        [15] = pallet.string,
+        [16] = pallet.comment,
+    }, config.terminal)
+    return terminal_col
 end
 
+---@return table<string, IgniteHighlightDef>
 function M.get_groups()
     local config = require("ignite").config
     local pallet = config.pallet
     local style = config.style
     local groups = {
-        Background0 = { bg = pallet.background0 },
-        Background1 = { bg = pallet.background1 },
-        Background2 = { bg = pallet.background2 },
-        Background3 = { bg = pallet.background3 },
+        ColGroupBackground0 = { bg = pallet.background0 },
+        ColGroupBackground1 = { bg = pallet.background1 },
+        ColGroupBackground2 = { bg = pallet.background2 },
+        ColGroupBackground3 = { bg = pallet.background3 },
+
+        ColGroupCursor = { fg = pallet.background0, bg = pallet.cursor },
+        ColGroupText = { fg = pallet.text, bg = pallet.background1 },
+        ColGroupText2 = { fg = pallet.text2 },
+
+        ColGroupVariable = { fg = pallet.variable },
+        ColGroupProperty = { fg = pallet.property },
+        ColGroupComment = { fg = pallet.comment },
+        ColGroupOperator = { fg = pallet.operator },
+        ColGroupModule = { fg = pallet.module },
+        ColGroupConstant = { fg = pallet.constant },
+        ColGroupKeyword = { fg = pallet.keyword },
+        ColGroupType = { fg = pallet.type },
+        ColGroupMethod = { fg = pallet.method },
+        ColGroupString = { fg = pallet.string },
+        ColGroupParameter = { fg = pallet.parameter },
 
         ColorColumn = { bg = pallet.background3 },
         Conceal = { fg = pallet.comment },
 
-        Cursor = { fg = pallet.cursor_under_txt, bg = pallet.cursor },
+        Cursor = { fg = pallet.background0, bg = pallet.cursor },
         iCursor = { link = "Cursor" },
         vCursor = { link = "Cursor" },
         lCursor = { link = "Cursor" },
@@ -73,7 +94,7 @@ function M.get_groups()
         MsgSeparator = { fg = pallet.background3 },
         MoreMsg = { fg = pallet.string, bg = pallet.background2 },
 
-        Substitute = { fg = pallet.cursor_under_txt, bg = pallet.type },
+        Substitute = { fg = pallet.background0, bg = pallet.type },
         CursorLineNr = { fg = pallet.text2 },
 
         NonText = { fg = pallet.keyword },
@@ -90,7 +111,7 @@ function M.get_groups()
 
         Question = { fg = pallet.module, bold = style.bold },
         QuickFixLine = { fg = pallet.module },
-        Search = { fg = pallet.cursor_under_txt, bg = pallet.type },
+        Search = { fg = pallet.background0, bg = pallet.type },
         SpecialKey = { fg = "NONE", bg = "NONE" },
 
         SpellBad = { undercurl = style.undercurl, sp = pallet.keyword },
@@ -109,7 +130,7 @@ function M.get_groups()
 
         Whitespace = { fg = pallet.comment },
         WinSeparator = { fg = pallet.background3 },
-        WildMenu = { fg = pallet.cursor_under_txt, bg = pallet.type },
+        WildMenu = { fg = pallet.background0, bg = pallet.type },
         WinBar = { bg = pallet.background3 },
         WinBarNC = { bg = pallet.background3 },
 
@@ -359,7 +380,7 @@ function M.get_groups()
         NvimTreeGitRenamed = { fg = pallet.method },
         NvimTreeGitNew = { fg = pallet.module },
         NvimTreeGitDeleted = { fg = pallet.keyword },
-        NvimTreeWindowPicker = { fg = pallet.cursor_under_txt, bg = pallet.operator },
+        NvimTreeWindowPicker = { fg = pallet.background0, bg = pallet.operator },
 
         TelescopeNormal = { link = "Normal" },
         TelescopePromptNormal = { link = "Normal" },

@@ -3,27 +3,27 @@ local pallet = config.pallet
 
 local theme = {
     normal = {
-        a = { bg = pallet.operator, fg = pallet.cursor_under_txt, gui = "bold" },
+        a = { bg = pallet.operator, fg = pallet.background0, gui = "bold" },
         b = { bg = pallet.background3 },
         c = { bg = pallet.background2 },
     },
     insert = {
-        a = { bg = pallet.string, fg = pallet.cursor_under_txt, gui = "bold" },
+        a = { bg = pallet.string, fg = pallet.background0, gui = "bold" },
         b = { bg = pallet.background3 },
         c = { bg = pallet.background2 },
     },
     visual = {
-        a = { bg = pallet.keyword, fg = pallet.cursor_under_txt, gui = "bold" },
+        a = { bg = pallet.keyword, fg = pallet.background0, gui = "bold" },
         b = { bg = pallet.background3 },
         c = { bg = pallet.background2 },
     },
     replace = {
-        a = { bg = pallet.string, fg = pallet.cursor_under_txt, gui = "bold" },
+        a = { bg = pallet.string, fg = pallet.background0, gui = "bold" },
         b = { bg = pallet.background3 },
         c = { bg = pallet.background2 },
     },
     command = {
-        a = { bg = pallet.constant, fg = pallet.cursor_under_txt, gui = "bold" },
+        a = { bg = pallet.constant, fg = pallet.background0, gui = "bold" },
         b = { bg = pallet.background3 },
         c = { bg = pallet.background2 },
     },
