@@ -305,6 +305,7 @@ function M.get_groups()
         ["@include"] = { link = "Include" },
         ["@preproc"] = { link = "PreProc" },
         ["@debug"] = { link = "Debug" },
+        ["@attribute"] = { link = "Keyword" },
 
         htmlTag = { link = "Keyword" },
         htmlEndTag = { link = "Keyword" },
