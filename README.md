@@ -66,6 +66,7 @@ require("ignite").setup({
         strikethrough = true,
         bold = true,
         italic = true,
+        no_border = true, -- Enables NvChad like theme
     },
     -- Override theme pallet. See @class IgnitePallet
     pallet = {

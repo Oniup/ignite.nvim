@@ -101,9 +101,9 @@ function M.get_groups()
         Normal = { fg = pallet.text, bg = pallet.background1 },
         NormalFloat = { fg = pallet.text, bg = pallet.background1 },
         FloatBorder = { fg = pallet.comment },
-        FloatTitle = { fg = pallet.method, bold = style.bold },
+        FloatTitle = { fg = pallet.method, italic = style.italic, bold = style.bold },
         Pmenu = { bg = pallet.background2 },
-        PmenuSel = { fg = "NONE", bg = pallet.background3 },
+        PmenuSel = { fg = pallet.method, bg = pallet.background3 },
         PmenuKind = { fg = pallet.type },
         PmenuKindSel = { fg = pallet.type },
         PmenuSBar = { bg = pallet.background3 },
@@ -123,7 +123,7 @@ function M.get_groups()
         TabLineFill = { bg = pallet.background2 },
         TabLineSel = { bg = pallet.background2 },
 
-        Title = { fg = pallet.method, bold = style.bold },
+        Title = { fg = pallet.method, italic = style.italic, bold = style.bold },
         Visual = { bg = pallet.background3 },
         VisualNOS = { bg = pallet.background3 },
         WarningMsg = { fg = pallet.type },
@@ -500,22 +500,38 @@ function M.get_groups()
         IlluminatedWordRead = { link = "LspReferenceRead" },
         IlluminatedWordWrite = { link = "LspReferenceWrite" },
 
+        NotifyTRACETitle = { fg = pallet.comment },
+        NotifyINFOTitle = { fg = pallet.string },
+        NotifyDEBUGTitle = { fg = pallet.operator },
+        NotifyWARNTitle = { fg = pallet.type },
+        NotifyERRORTitle = { fg = pallet.keyword },
+        NotifyTRACEBorder = { fg = pallet.comment },
+        NotifyINFOBorder = { fg = pallet.string },
+        NotifyDEBUGBorder = { fg = pallet.operator },
+        NotifyWARNBorder = { fg = pallet.type },
+        NotifyERRORBorder = { fg = pallet.keyword },
+        NotifyTRACEIcon = { fg = pallet.comment },
+        NotifyINFOIcon = { fg = pallet.string },
+        NotifyDEBUGIcon = { fg = pallet.operator },
+        NotifyWARNIcon = { fg = pallet.type },
+        NotifyERRORIcon = { fg = pallet.keyword },
+        NotifyTRACEBody = { fg = pallet.text },
+        NotifyINFOBody = { fg = pallet.text },
+        NotifyDEBUGBody = { fg = pallet.text },
+        NotifyWARNBody = { fg = pallet.type },
+        NotifyERRORBody = { fg = pallet.keyword },
+
         NoiceCursor = { link = "Cursor" },
-        NotifyDEBUGBorder = { link = "FloatBorder" },
-        NotifyDEBUGIcon = { link = "Debug" },
-        NotifyDEBUGTitle = { link = "Debug" },
-        NotifyERRORBorder = { link = "DiagnosticError" },
-        NotifyERRORIcon = { link = "DiagnosticError" },
-        NotifyERRORTitle = { link = "DiagnosticError" },
-        NotifyINFOBorder = { link = "DiagnosticInfo" },
-        NotifyINFOIcon = { link = "DiagnosticInfo" },
-        NotifyINFOTitle = { link = "DiagnosticInfo" },
-        NotifyTRACEBorder = { link = "DiagnosticHint" },
-        NotifyTRACEIcon = { link = "DiagnosticHint" },
-        NotifyTRACETitle = { link = "DiagnosticHint" },
-        NotifyWARNBorder = { link = "DiagnosticWarn" },
-        NotifyWARNIcon = { link = "DiagnosticWarn" },
-        NotifyWARNTitle = { link = "DiagnosticWarn" },
+        NoiceCmdline = { bg = pallet.background0 },
+        NoiceCmdlineIcon = { fg = pallet.constant },
+        NoiceCmdlinePopupBorder = { link = "FloatBorder" },
+        NoiceCmdlinePopupBorderSearch = { link = "FloatBorder" },
+        NoiceConfirmBorder = { link = "FloatBorder" },
+        NoiceCmdlinePopupTitle = { fg = pallet.method, italic = style.italic, bold = style.bold },
+        NoiceCmdlinePopup = { fg = pallet.text },
+        NoicePopupmenuMatch = { fg = pallet.type },
+        NoiceVirtualText = { fg = pallet.type, italic = style.italic },
+        NoiceCompletionItemKindDefault = { fg = pallet.keyword },
 
         BufferCurrent = {
             fg = pallet.operator,
@@ -583,6 +599,50 @@ function M.get_groups()
         BufferScrollArrow = { bg = pallet.background0 },
         BufferPart = {},
     }
+
+    if config.style.no_borders then
+        local no_borders = {
+            NormalFloat = { bg = pallet.background0 },
+            FloatBorder = { fg = pallet.background0, bg = pallet.background0 },
+            NvimTreeNormal = { bg = pallet.background0 },
+
+            Pmenu = { bg = pallet.background0 },
+
+            TelescopeNormal = { link = "ColGroupBackground0" },
+            TelescopeBorder = { link = "ColGroupBackground0" },
+            TelescopePromptNormal = { link = "ColGroupBackground2" },
+            TelescopePromptBorder = { link = "ColGroupBackground2" },
+
+            NotifyTRACETitle = { bg = pallet.background0 },
+            NotifyINFOTitle = { bg = pallet.background0 },
+            NotifyDEBUGTitle = { bg = pallet.background0 },
+            NotifyWARNTitle = { bg = pallet.background0 },
+            NotifyERRORTitle = { bg = pallet.background0 },
+            NotifyTRACEBorder = { fg = pallet.background0, bg = pallet.background0 },
+            NotifyINFOBorder = { fg = pallet.background0, bg = pallet.background0 },
+            NotifyDEBUGBorder = { fg = pallet.background0, bg = pallet.background0 },
+            NotifyWARNBorder = { fg = pallet.background0, bg = pallet.background0 },
+            NotifyERRORBorder = { fg = pallet.background0, bg = pallet.background0 },
+            NotifyTRACEIcon = { bg = pallet.background0 },
+            NotifyINFOIcon = { bg = pallet.background0 },
+            NotifyDEBUGIcon = { bg = pallet.background0 },
+            NotifyWARNIcon = { bg = pallet.background0 },
+            NotifyERRORIcon = { bg = pallet.background0 },
+            NotifyTRACEBody = { bg = pallet.background0 },
+            NotifyINFOBody = { bg = pallet.background0 },
+            NotifyDEBUGBody = { bg = pallet.background0 },
+            NotifyWARNBody = { bg = pallet.background0 },
+            NotifyERRORBody = { bg = pallet.background0 },
+
+            NoiceCmdlinePopup = { fg = pallet.text, bg = pallet.background0 },
+            NoiceCmdlineIconSearch = { fg = pallet.keyword },
+            NoiceCmdlinePopupTitle = { bg = pallet.background2 },
+
+            CmpNormal = { link = "NormalFloat" },
+        }
+        groups = vim.tbl_deep_extend("force", groups, no_borders)
+    end
+
     if config.groups then
         groups = vim.tbl_deep_extend("force", groups, config.groups)
     end

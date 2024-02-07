@@ -23,6 +23,7 @@ local default_style = {
     strikethrough = true,
     bold = true,
     italic = true,
+    no_borders = true,
 }
 
 --- @class IgnitePallet
@@ -62,22 +63,6 @@ M.config = {
     terminal = {},
     lualine_theme = {},
 }
-
----@return table<string, IgniteHighlightDef>
-function M.group_darker_panel_bg_overrides()
-    return {
-        NormalFloat = { link = "ColGroupBackground0" },
-        FloatBorder = { link = "ColGroupBackground0" },
-        NvimTreeNormal = { link = "ColGroupBackground0" },
-
-        TelescopeNormal = { link = "ColGroupBackground0" },
-        TelescopeBorder = { link = "ColGroupBackground0" },
-        TelescopePromptNormal = { link = "ColGroupBackground2" },
-        TelescopePromptBorder = { link = "ColGroupBackground2" },
-
-        CmpNormal = { link = "NormalFloat" },
-    }
-end
 
 --- @param overrides IgniteConfig
 function M.setup(overrides)
