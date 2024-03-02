@@ -8,22 +8,22 @@ function M.get_terminal()
         -- normal
         [1] = pallet.background0,
         [2] = pallet.keyword,
-        [3] = pallet.method,
+        [3] = pallet.string,
         [4] = pallet.type,
-        [5] = pallet.background3,
+        [5] = pallet.variable,
         [6] = pallet.constant,
-        [7] = pallet.string,
-        [8] = pallet.comment,
+        [7] = pallet.method,
+        [8] = pallet.text,
 
         -- bright
-        [9] = pallet.variable,
+        [9] = pallet.background1,
         [10] = pallet.keyword,
-        [11] = pallet.method,
+        [11] = pallet.module,
         [12] = pallet.type,
-        [13] = pallet.background3,
+        [13] = pallet.operator,
         [14] = pallet.constant,
-        [15] = pallet.string,
-        [16] = pallet.comment,
+        [15] = pallet.type,
+        [16] = pallet.text,
     }, config.terminal)
     return terminal_col
 end
