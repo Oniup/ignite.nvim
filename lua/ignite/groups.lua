@@ -162,9 +162,9 @@ function M.get_groups()
         PreCondit = { fg = pallet.text2 },
 
         Type = { fg = pallet.keyword },
-        StorageClass = { fg = pallet.keyword },
+        StorageClass = { fg = pallet.type },
         Structure = { fg = pallet.type },
-        Typedef = { fg = pallet.type },
+        Typedef = { fg = pallet.keyword },
 
         Special = { fg = pallet.constant },
         SpecialChar = { fg = pallet.constant },
