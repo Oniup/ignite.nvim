@@ -6,7 +6,7 @@ function M.get_terminal()
     local pallet = config.pallet
     local terminal_col = vim.tbl_deep_extend("force", {
         -- normal
-        [1] = pallet.background0,
+        [1] = pallet.background3,
         [2] = pallet.keyword,
         [3] = pallet.string,
         [4] = pallet.type,
@@ -16,13 +16,13 @@ function M.get_terminal()
         [8] = pallet.text,
 
         -- bright
-        [9] = pallet.background1,
+        [9] = pallet.comment,
         [10] = pallet.keyword,
         [11] = pallet.module,
-        [12] = pallet.type,
+        [12] = pallet.method,
         [13] = pallet.operator,
         [14] = pallet.constant,
-        [15] = pallet.type,
+        [15] = pallet.keyword,
         [16] = pallet.text,
     }, config.terminal)
     return terminal_col
