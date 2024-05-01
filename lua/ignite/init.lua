@@ -28,26 +28,26 @@ local default_style = {
 
 --- @class IgnitePallet
 local default_theme = {
-    background0 = "#0d0e0e",
+    background0 = "#0D0E0E",
     background1 = "#131515",
-    background2 = "#181b1a",
+    background2 = "#181B1A",
     background3 = "#222625",
 
-    cursor = "#bfb2a4",
-    text = "#a69a8d",
-    text2 = "#9a8d8d",
+    cursor = "#BFB2A4",
+    text = "#A69A8D",
+    text2 = "#9A8D8D",
 
     variable = "#879291",
-    property = "#a6a499",
-    comment = "#59544d",
-    operator = "#82979c",
-    module = "#b1ca78",
-    constant = "#ee617b",
-    keyword = "#e74e3d",
-    type = "#f6ba41",
-    method = "#fe7442",
-    string = "#9aad6c",
-    parameter = "#c19c6c",
+    property = "#A6A499",
+    comment = "#59544D",
+    operator = "#82979C",
+    module = "#BDB598",
+    constant = "#EE617B",
+    keyword = "#E74E3D",
+    type = "#F6BA41",
+    method = "#FE7442",
+    string = "#9AAD6C",
+    parameter = "#C19C6C",
 }
 
 --- @class IgniteConfig

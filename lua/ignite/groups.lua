@@ -6,7 +6,7 @@ function M.get_terminal()
     local pallet = config.pallet
     local terminal_col = vim.tbl_deep_extend("force", {
         -- normal
-        [1] = pallet.background3,
+        [1] = pallet.comment,
         [2] = pallet.keyword,
         [3] = pallet.string,
         [4] = pallet.type,
@@ -67,7 +67,7 @@ function M.get_groups()
         CursorLine = { bg = pallet.background2 },
 
         Directory = { fg = pallet.operator },
-        DiffAdd = { fg = pallet.module },
+        DiffAdd = { fg = pallet.string },
         DiffChange = { fg = pallet.type },
         DiffDelete = { fg = pallet.keyword },
         DiffText = { fg = pallet.method },
@@ -89,7 +89,7 @@ function M.get_groups()
         LineNr = { fg = pallet.comment },
         MatchParen = { bg = pallet.comment },
 
-        ModeMsg = { fg = pallet.module, bg = pallet.background2 },
+        ModeMsg = { fg = pallet.string, bg = pallet.background2 },
         MsgArea = { bg = pallet.background2 },
         MsgSeparator = { fg = pallet.background3 },
         MoreMsg = { fg = pallet.string, bg = pallet.background2 },
@@ -109,8 +109,8 @@ function M.get_groups()
         PmenuSBar = { bg = pallet.background3 },
         PmenuThumb = { bg = pallet.background2 },
 
-        Question = { fg = pallet.module, bold = style.bold },
-        QuickFixLine = { fg = pallet.module },
+        Question = { fg = pallet.string, bold = style.bold },
+        QuickFixLine = { fg = pallet.string },
         Search = { fg = pallet.background0, bg = pallet.type },
         SpecialKey = { fg = "NONE", bg = "NONE" },
 
@@ -247,7 +247,7 @@ function M.get_groups()
         ["@lsp.type.comment"] = { link = "@comment" },
         ["@lsp.type.decorator"] = { link = "@macro" },
         ["@lsp.type.enum"] = { link = "@structure" },
-        ["@lsp.type.enumMember"] = { fg = pallet.module },
+        ["@lsp.type.enumMember"] = { fg = pallet.string },
         ["@lsp.type.function"] = { link = "@function" },
         ["@lsp.type.interface"] = { link = "Identifier" },
         ["@lsp.type.macro"] = { link = "@macro" },
@@ -366,7 +366,7 @@ function M.get_groups()
         NvimTreeRootFolder = { fg = pallet.method, bold = style.bold },
         NvimTreeFolderIcon = { fg = pallet.operator, bold = style.bold },
         NvimTreeFileIcon = { fg = pallet.text },
-        NvimTreeExecFile = { fg = pallet.module, bold = style.bold },
+        NvimTreeExecFile = { fg = pallet.string, bold = style.bold },
         NvimTreeOpenedFile = { fg = pallet.keyword, bold = style.bold },
         NvimTreeSpecialFile = {
             fg = pallet.keyword,
@@ -376,10 +376,10 @@ function M.get_groups()
         NvimTreeImageFile = { fg = pallet.constant },
         NvimTreeIndentMarker = { fg = pallet.background3 },
         NvimTreeGitDirty = { fg = pallet.keyword },
-        NvimTreeGitStaged = { fg = pallet.module },
+        NvimTreeGitStaged = { fg = pallet.string },
         NvimTreeGitMerge = { fg = pallet.method },
         NvimTreeGitRenamed = { fg = pallet.method },
-        NvimTreeGitNew = { fg = pallet.module },
+        NvimTreeGitNew = { fg = pallet.string },
         NvimTreeGitDeleted = { fg = pallet.keyword },
         NvimTreeWindowPicker = { fg = pallet.background0, bg = pallet.operator },
 
@@ -411,7 +411,7 @@ function M.get_groups()
         CmpItemKindConstructor = { link = "Structure" },
         CmpItemKindCopilot = { fg = pallet.operator },
         CmpItemKindEnum = { link = "Structure" },
-        CmpItemKindEnumMember = { fg = pallet.module },
+        CmpItemKindEnumMember = { fg = pallet.string },
         CmpItemKindEvent = { fg = pallet.text },
         CmpItemKindField = { fg = pallet.property },
         CmpItemKindFile = { fg = pallet.text },
@@ -480,8 +480,8 @@ function M.get_groups()
         DapUIWatchesError = { link = "DiagnosticError" },
         DapUIWatchesValue = { link = "Constant" },
         DapUIWinSelect = { link = "Type" },
-        DapUIPlayPause = { fg = pallet.module },
-        DapUIRestart = { fg = pallet.module },
+        DapUIPlayPause = { fg = pallet.string },
+        DapUIRestart = { fg = pallet.constant },
         DapUIStepBack = { fg = pallet.operator },
         DapUIStepInto = { fg = pallet.operator },
         DapUIStepOut = { fg = pallet.operator },
@@ -491,7 +491,7 @@ function M.get_groups()
         TSRainbowRed = { fg = pallet.keyword },
         TSRainbowOrange = { fg = pallet.method },
         TSRainbowYellow = { fg = pallet.type },
-        TSRainbowGreen = { fg = pallet.module },
+        TSRainbowGreen = { fg = pallet.string },
         TSRainbowBlue = { fg = pallet.operator },
         TSRainbowViolet = { fg = pallet.constant },
         TSRainbowCyan = { fg = pallet.property },
