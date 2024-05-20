@@ -598,6 +598,14 @@ function M.get_groups()
         BufferOffset = { bg = pallet.background0 },
         BufferScrollArrow = { bg = pallet.background0 },
         BufferPart = {},
+
+        GitSignsAdd = { fg = pallet.string },
+        GitSignsAddLn = { link = "GitSignsAdd" },
+        GitSignsAddNr = { link = "GitSignsAdd" },
+        GitSignsChangeLn = { fg = pallet.type },
+        GitSignsChangeNr = { link = "GitSignsChange" },
+        GitSignsDelete = { fg = pallet.keyword },
+        GitSignsDeleteNr = { link = "GitSignsDelete" },
     }
 
     if config.style.no_borders then
