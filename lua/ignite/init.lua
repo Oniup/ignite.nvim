@@ -22,7 +22,7 @@ local default_style = {
   undercurl = true,
   strikethrough = true,
   bold = true,
-  italic = true,
+  italic = false,
   no_borders = true,
 }
 
@@ -32,6 +32,7 @@ M.old_theme = {
   background1 = "#131515",
   background2 = "#181B1A",
   background3 = "#222625",
+  cursor_line = "#282828",
 
   cursor = "#BFB2A4",
   text = "#A69A8D",
@@ -42,6 +43,7 @@ M.old_theme = {
   comment = "#59544D",
   operator = "#82979C",
   module = "#BDB598",
+  macro = "#B461C0",
   constant = "#EE617B",
   keyword = "#E74E3D",
   type = "#F6BA41",
@@ -54,8 +56,9 @@ M.old_theme = {
 M.default_theme = {
   background0 = "#181818", -- Tab bar background
   background1 = "#1F1F1F", -- Text editor background
-  background2 = "#282828", -- Status bar background
+  background2 = "#181818", -- Status bar background
   background3 = "#282828", -- Tab bar selected buffer highlight bar
+  cursor_line = "#282828",
 
   cursor = "#AEAFAD",
   text = "#D4D4D4",
@@ -64,7 +67,8 @@ M.default_theme = {
   variable = "#B0B176",
   property = "#CDCE87",
   comment = "#6A9955",
-  operator = "#cf564d",
+  macro = "#B461C0",
+  operator = "#D4D4D4",
   module = "#c0ccb9",
   constant = "#936228",
   keyword = "#cf564d",

@@ -6,20 +6,20 @@ function M.get_terminal()
   local pallet = config.pallet
   local terminal_col = vim.tbl_deep_extend("force", {
     -- normal
-    [1] = pallet.comment,
+    [1] = pallet.text2,
     [2] = pallet.keyword,
-    [3] = pallet.string,
+    [3] = pallet.comment,
     [4] = pallet.type,
-    [5] = pallet.variable,
+    [5] = pallet.text2,
     [6] = pallet.constant,
-    [7] = pallet.method,
+    [7] = pallet.string,
     [8] = pallet.text,
 
     -- bright
-    [9] = pallet.comment,
+    [9] = pallet.text2,
     [10] = pallet.keyword,
-    [11] = pallet.module,
-    [12] = pallet.method,
+    [11] = pallet.cursor_line,
+    [12] = pallet.type,
     [13] = pallet.operator,
     [14] = pallet.constant,
     [15] = pallet.keyword,
@@ -63,8 +63,8 @@ function M.get_groups()
     vCursor = { link = "Cursor" },
     lCursor = { link = "Cursor" },
     CursorIM = { link = "Cursor" },
-    CursorColumn = { bg = pallet.background2 },
-    CursorLine = { bg = pallet.background2 },
+    CursorColumn = { bg = pallet.cursor_line },
+    CursorLine = { bg = pallet.cursor_line },
 
     Directory = { fg = pallet.operator },
     DiffAdd = { fg = pallet.string },
@@ -144,8 +144,8 @@ function M.get_groups()
     Constant = { fg = pallet.constant },
     String = { fg = pallet.string },
     Character = { fg = pallet.constant },
-    Number = { fg = pallet.constant },
-    Boolean = { fg = pallet.constant },
+    Number = { fg = pallet.module },
+    Boolean = { fg = pallet.module },
     Float = { fg = pallet.constant },
 
     Identifier = { fg = pallet.variable },
@@ -162,7 +162,7 @@ function M.get_groups()
     PreProc = { fg = pallet.text2 },
     Include = { fg = pallet.text2 },
     Define = { fg = pallet.text2 },
-    Macro = { fg = pallet.constant },
+    Macro = { fg = pallet.macro },
     PreCondit = { fg = pallet.text2 },
 
     Type = { fg = pallet.keyword },
@@ -255,7 +255,7 @@ function M.get_groups()
     ["@lsp.type.comment"] = { link = "@comment" },
     ["@lsp.type.decorator"] = { link = "@macro" },
     ["@lsp.type.enum"] = { fg = pallet.type },
-    ["@lsp.type.enumMember"] = { fg = pallet.string },
+    ["@lsp.type.enumMember"] = { fg = pallet.constant },
     ["@lsp.type.function"] = { link = "@function" },
     ["@lsp.type.interface"] = { link = "Identifier" },
     ["@lsp.type.macro"] = { link = "@macro" },
