@@ -86,8 +86,8 @@ function M.get_groups()
     IncSearch = { fg = pallet.type },
     CurSearch = { link = "IncSearch" },
 
-    LineNr = { fg = pallet.comment },
-    MatchParen = { bg = pallet.comment },
+    LineNr = { fg = pallet.text2 },
+    MatchParen = { bg = pallet.text2 },
 
     ModeMsg = { fg = pallet.string, bg = pallet.background2 },
     MsgArea = { bg = pallet.background2 },
@@ -431,7 +431,7 @@ function M.get_groups()
     NvimTreeGitStaged = { fg = pallet.string },
     NvimTreeGitMerge = { fg = pallet.method },
     NvimTreeGitRenamed = { fg = pallet.method },
-    NvimTreeGitNew = { fg = pallet.string },
+    NvimTreeGitNew = { fg = pallet.comment },
     NvimTreeGitDeleted = { fg = pallet.keyword },
     NvimTreeWindowPicker = { fg = pallet.background0, bg = pallet.operator },
 
@@ -444,8 +444,8 @@ function M.get_groups()
     TelescopeResultsTitle = { link = "Title" },
     TelescopeMatching = { fg = pallet.type, bold = style.bold },
     TelescopePromptPrefix = { fg = pallet.keyword },
-    TelescopeSelectionCaret = { fg = pallet.method, bg = pallet.background3 },
-    TelescopeSelection = { fg = pallet.method, bg = pallet.background3 },
+    TelescopeSelectionCaret = { fg = pallet.method, bg = pallet.background1 },
+    TelescopeSelection = { fg = pallet.method, bg = pallet.background1 },
 
     CmpItemAbbrMatch = { fg = pallet.type },
     CmpItemMenu = { link = "Comment" },
@@ -659,7 +659,7 @@ function M.get_groups()
     BufferScrollArrow = { bg = pallet.background0 },
     BufferPart = {},
 
-    GitSignsAdd = { fg = pallet.string },
+    GitSignsAdd = { fg = pallet.comment },
     GitSignsChange = { fg = pallet.type },
     GitSignsDelete = { fg = pallet.keyword },
 

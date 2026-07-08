@@ -27,7 +27,7 @@ local default_style = {
 }
 
 --- @class IgnitePallet
-local default_theme = {
+M.old_theme = {
   background0 = "#0D0E0E",
   background1 = "#131515",
   background2 = "#181B1A",
@@ -50,6 +50,30 @@ local default_theme = {
   parameter = "#C19C6C",
 }
 
+--- @class IgnitePallet
+M.default_theme = {
+  background0 = "#181818", -- Tab bar background
+  background1 = "#1F1F1F", -- Text editor background
+  background2 = "#282828", -- Status bar background
+  background3 = "#282828", -- Tab bar selected buffer highlight bar
+
+  cursor = "#AEAFAD",
+  text = "#D4D4D4",
+  text2 = "#858585",
+
+  variable = "#B0B176",
+  property = "#CDCE87",
+  comment = "#6A9955",
+  operator = "#cf564d",
+  module = "#c0ccb9",
+  constant = "#936228",
+  keyword = "#cf564d",
+  type = "#efd630",
+  method = "#d37f2a",
+  string = "#ce9178",
+  parameter = "#b6a671",
+}
+
 --- @class IgniteConfig
 --- @field pallet IgnitePallet?
 --- @field style IgniteStyle?
@@ -57,7 +81,7 @@ local default_theme = {
 --- @field terminal table<number, string>?
 --- @field lualine_theme table?
 M.config = {
-  pallet = default_theme,
+  pallet = M.default_theme,
   style = default_style,
   groups = {},
   terminal = {},
