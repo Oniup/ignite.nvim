@@ -58,7 +58,7 @@ M.default_theme = {
   background1 = "#1F1F1F", -- Text editor background
   background2 = "#181818", -- Status bar background
   background3 = "#282828", -- Tab bar selected buffer highlight bar
-  cursor_line = "#282828",
+  cursor_line = "#2d2d2d",
 
   cursor = "#AEAFAD",
   text = "#D4D4D4",

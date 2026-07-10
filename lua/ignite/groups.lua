@@ -95,7 +95,7 @@ function M.get_groups()
     MoreMsg = { fg = pallet.string, bg = pallet.background2 },
 
     Substitute = { fg = pallet.background0, bg = pallet.type },
-    CursorLineNr = { fg = pallet.text2 },
+    CursorLineNr = { fg = pallet.text },
 
     NonText = { fg = pallet.comment },
     Normal = { fg = pallet.text, bg = pallet.background1 },
@@ -118,7 +118,7 @@ function M.get_groups()
     Search = { fg = pallet.background0, bg = pallet.type },
     SpecialKey = { fg = "NONE", bg = "NONE" },
 
-    SpellBad = { undercurl = style.undercurl, sp = pallet.keyword },
+    SpellBad = { undercurl = style.undercurl, sp = pallet.text2 },
 
     StatusLine = { bg = pallet.background2 },
     StatusLineNC = { fg = pallet.comment, bg = pallet.background2 },
@@ -128,7 +128,7 @@ function M.get_groups()
     TabLineSel = { bg = pallet.background2 },
 
     Title = { fg = pallet.method, italic = style.italic, bold = style.bold },
-    Visual = { bg = pallet.background3 },
+    Visual = { bg = pallet.cursor_line },
     VisualNOS = { bg = pallet.background3 },
     WarningMsg = { fg = pallet.type },
 
@@ -511,6 +511,7 @@ function M.get_groups()
     CocHintHighlight = { undercurl = style.undercurl, sp = pallet.operator },
 
     DapBreakpointSymbol = { fg = pallet.keyword },
+    DapBreakpoint = { fg = pallet.keyword },
     DapStoppedSymbol = { fg = pallet.module },
     DapUIBreakpointsCurrentLine = { link = "Structure" },
     DapUIBreakpointsDisabledLine = { link = "Comment" },
