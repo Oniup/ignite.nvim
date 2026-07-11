@@ -649,7 +649,7 @@ function M.get_groups()
       bg = pallet.background1,
       italic = style.italic,
     },
-    BufferInactive = { fg = pallet.background3, bg = pallet.background0 },
+    BufferInactive = { fg = pallet.text2, bg = pallet.background0 },
     BufferInactiveIndex = { fg = pallet.background3, bg = pallet.background0 },
     BufferInactiveMod = { fg = pallet.background3, bg = pallet.background0 },
     BufferInactiveSign = { fg = pallet.background3, bg = pallet.background0 },
