@@ -326,7 +326,7 @@ function M.get_groups()
     ["@exception"] = { link = "Exception" },
     ["@variable"] = { fg = pallet.variable },
     ["@variable.parameter"] = { fg = pallet.parameter },
-    ["@variable.builtin"] = { link = "Special" },
+    ["@variable.builtin"] = { link = "Identifier" },
     ["@storageclass"] = { link = "StorageClass" },
     ["@structure"] = { link = "Structure" },
     ["@namespace"] = { fg = pallet.module },
