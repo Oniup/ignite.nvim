@@ -151,13 +151,13 @@ function M.get_groups()
     Identifier = { fg = pallet.variable },
     Function = { fg = pallet.method, italic = style.italic },
 
-    Statement = { fg = pallet.keyword },
-    Conditional = { fg = pallet.keyword },
-    Repeat = { fg = pallet.keyword },
+    Statement = { fg = pallet.branching },
+    Conditional = { fg = pallet.branching },
+    Repeat = { fg = pallet.branching },
     Label = { fg = pallet.keyword },
     Operator = { fg = pallet.operator },
     Keyword = { fg = pallet.keyword },
-    Exception = { fg = pallet.keyword },
+    Exception = { fg = pallet.branching },
 
     PreProc = { fg = pallet.text2 },
     Include = { fg = pallet.text2 },
@@ -311,6 +311,7 @@ function M.get_groups()
     ["@operator"] = { link = "Operator" },
 
     ["@keyword"] = { link = "Keyword" },
+    ["@keyword.modifier"] = { link = "Keyword" },
     ["@keyword.conditional"] = { link = "Conditional" },
     ["@keyword.debug"] = { link = "Debug" },
     ["@keyword.directive"] = { link = "PreProc" },
